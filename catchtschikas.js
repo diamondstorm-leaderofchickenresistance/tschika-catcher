@@ -3,21 +3,18 @@ let tschikasCaught = 0;
 let tschikasSpawned = 0;
 let lalalala = 0;
 //let bitchesWhoeverIsReadingThisHas = 0;
-function stuffThatNeedsToHappenWhenTheBodyLoads(){
-    rngTschikaSpawn();
-}
+//tschika spawner
 document.addEventListener('touchend', cantTouchMe_DUN_DUN_DA_DA__DA_DA_DA_DA);
-function rngTschikaSpawn() {
-    let rngDecider = Math.random()*25000;
-        setInterval(newTschika, rngDecider);
-    if (rngDecider < 4000) {
-        rngDecider = 17000;
-        console.log(rngDecider);
-    }
+let rngDecider = Math.random()*25000;
+if (rngDecider < 5000) {
+    rngDecider =15000;
     console.log(rngDecider);
 }
-}
-function newTschika(left, top) {
+setInterval(newTschika, rngDecider);
+console.log(rngDecider);
+
+//creating the tschikas
+function newTschika() {
     tschikasSpawned++;
     const createdTschika = document.createElement('img');
     createdTschika.setAttribute('class', 'tschika');
@@ -34,9 +31,8 @@ function newTschika(left, top) {
             document.querySelector('strong').innerHTML = tschikasCaught;
             this.remove();
         timesRolled = 0;
-    this.style.left = randomXCoordinate^2 + 'em';
-    this.style.top = randomYCoordinate^2 + 'em';
     });
+//tschika apperance
     const TschikaImages = ["docs/assets/tschika who sings the wheels on the bus.png",
     "docs/assets/tschika who throws the chips.png",
     "docs/assets/tschika who fetches the chips.png"];
@@ -45,7 +41,7 @@ function newTschika(left, top) {
     createdTschika.src = selectedTschikaImg;
 }
 //hammer and the frog reference to stop people from cheating
-function cantTouchMe_DUN_DUN_DA_DA__DA_DA_DA_DA() {
+function cantTouchMe_DUN_DUN_DA_DA__DA_DA_DA_DA(){
     lalalala++;
     tschikasCaught--;
     if (lalalala == 1){
@@ -61,7 +57,7 @@ function cantTouchMe_DUN_DUN_DA_DA__DA_DA_DA_DA() {
         alert('I\'m not being serious, but stop');
     }
     if (lalalala == 5){
-        alert("HEHEHE U THOUGHT U COULD CHEAT, U F⁂CK⁂NG B⁂TCH⸘ NO! THAT'S IMPOSSIBLE!\n except for 1 way which i only know and am looking for people to eventually find.\nThen, being the sadistic being I am, I will remove it >;D \n and also, if you look in the code, i've made a hammer and the frog reference");
+        alert("HEHEHE U THOUGHT U COULD CHEAT, U FUCKING BITCH⸘ NO! THAT'S IMPOSSIBLE!\n except for 1 way which i only know and am looking for people to eventually find.\nThen, being the sadistic being I am, I will remove it >;D \n and also, if you look in the code, i've made a hammer and the frog reference");
     }
     if (lalalala == 6){
         alert('alright, I see that you\'re too stupid to reason with. The code actually stops workling if you click the container more than 100 times, because I can\'t be bothered adding more 0\'s.\nSo click the container 100 times, and any clicks after that will give u more tschikas.\n Why would I say something like this to you? Well, this has captured ur attention then, and I assume most people don\'t even try this out and lie to me, saying it\'s good. I\'m shit at doing this compared to people who work at google.\nMore clicks == more time u spent on website. So keep clicking. Click 1000, and get 900 tschikas.');
@@ -76,31 +72,41 @@ function cantTouchMe_DUN_DUN_DA_DA__DA_DA_DA_DA() {
         if (document.querySelector('b') != afdwhiopu){
             alert('liar');
         }
-        document.querySelector('em').innerHTML = 'b⁂tches you have: '
-        alert('for further inquiries, f⁂ck⁂ng p⁂ss me off again');
+        document.querySelector('em').innerHTML = 'bitches you have: '
+        alert('for further inquiries, fucking piss me off again');
     }
     if (lalalala == 8){
         alert('WDYM I got it wrong? It\'s ACCURATE');
     }
     if (lalalala == 9){
-        alert(`You know what they say, \"if it aint broken, don\'t fix it.\" Well, I couldn\'t fix something that was broken (your mind with -1 braincells and -${tschikasCaught} b⁂tch⁂s), so I fixed the website instead to make it accurate`);
+        alert(`You know what they say, \"if it aint broken, don\'t fix it.\" Well, I couldn\'t fix something that was broken (your mind with -1 braincells and -${tschikasCaught} bitches), so I fixed the website instead to make it accurate`);
     }
     if (lalalala == 10){
-        alert('Stop it, I don\'t like it.\n =-OR-= \nTerminate thee bullshit, Thy dost not prefer the situation that thou art forcibly putting thyself in.\n are you REALLY sacrificing your time for this, just to p⁂ss me off? Well, if you want to waste it even more, I have a secret message at 10000 clicks. Try it, and if you get that, I\'ll be surprised.');
-    }
-    if (lalalala < 11){
-        null;
+        alert('Stop it, I don\'t like it.\n =-OR-= \nTerminate thee bullshit, Thy dost not prefer the situation that thou art forcibly putting thyself in.\n are you REALLY sacrificing your time for this, just to piss me off? Well, if you want to waste it even more, I have a secret message at 10000 clicks. Try it, and if you get that, I\'ll be surprised.');
     }
     if (lalalala == 10000){
-        alert('WHAT.THE.F⁂CK. \n YOU ACTUALLY F⁂CKING DID IT?! I WAS BEING SARCASTIC! BUT GOOD JOB- THIS IS A VERIFICATION THAT YOU HAVE NO B⁂TCH⁂S. THANKS FOR YOUR WASTED TIME AND EFFORT THOUGH! \n You get 1 gold star, verified especially from me, the leader if the chicken resistance.');
+        alert('WHAT.THE.FUCK. \n YOU ACTUALLY FUCKING DID IT?! I WAS BEING SARCASTIC! BUT GOOD JOB- THIS IS A VERIFICATION THAT YOU HAVE NO BITCHES. THANKS FOR YOUR WASTED TIME AND EFFORT THOUGH! \n You get 1 gold star, verified especially from me, the leader if the chicken resistance.');
     }
     if (lalalala == 10001){
         alert('cool. now you get 2 gold stars');
     }
 }
-function activateShopMenu(){
-    document.getElementsByClassName('shopMenuContainer').style.display = "block";
-    document.getElementsByClassName('shopMenuContent').style.display = "block";
+const activateStageSelect = () => {
+    let levelSelectorButtons = document.querySelectorAll('.levelSelectButton');
+    for (let i=0; i<levelSelectorButtons.length; i++){
+        levelSelectorButtons[i].classList.toggle('visibleStageSelect');
+    }
 }
+const activateShopMenu = () => {
+    let shopMenuContent = document.querySelectorAll('.shopMenuContent');
+    let shopMenuContainer = document.querySelectorAll('.shopMenuContainer');
+    for (let i=0; i<shopMenuContent.length; i++){
+        shopMenuContent[i].classList.toggle('visibleShopMenu');
+    }
+    for (let i=0; i<shopMenuContainer.length; i++){
+        shopMenuContainer[i].classList.toggle('visibleShopContainer');
+    }
+}
+
 //ILLUSION TSCHIKA. When you hover over 1 chicken, they move, and when you click on them, they disapear and leave the actual illusion tschika there for 0.2seconds and then summon some more tschikas
 //ALSO, REMEMBER LITTOO DRIPPA!
