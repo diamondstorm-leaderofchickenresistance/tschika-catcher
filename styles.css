@@ -1,15 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+html{
+    --cursor: url(docs/assets/tschika-cola.png);
+    --cursortrailer: '';
+}
 body{
     touch-action: none;
+    cursor: pointer;
 }
 main{
     border: 5px solid black;
     height: 38em;
-    width: 95%;
+    width: 97%;
     border-radius: 3px;
     background-color: #FFFFFF;
     background-size: 100% 100%;
     background-image: linear-gradient(to left,#FF0000 11.1%, #FF6000 22.2%, #EEE000 33.3%, #00FF00 44.4%, #007700 55.5%, #00FFF0 66.6%, #003e9b 77.7%, #6150fa 88.8%, #FF00FF 100%);
     margin: 0px;
+}
+#cursorTrailer{
+    height: 2em;
+    width: 2em;
+    background-image: var(--cursortrailer);
+    left: 40vh;
+    top: 13vh;
+    background-repeat: none;
+    background-size: cover;
+    position: fixed;
+    touch-action: none;
+    z-index: 1000;
+    opacity: 0;
+}
+#container:hover > #cursorTrailer{
+    opacity: 1;
 }
 #container{
     height: 99%;
@@ -19,16 +41,15 @@ main{
     background-size:100% 100%;
     background-image: url(docs/assets/windows\ xp\ wallpaper.jpg);
     overflow: auto;
-    cursor: url(docs/assets/tschika-cola.png), crosshair;
+    cursor: var(--cursor), crosshair;
 }
 .tschika{
     transition: transform 0.6s;
     height: 7em;
     padding: 10px;
     border-radius: 50px;
-    border: 1px double yellow;
-    position: block;
-    touch-action: none;
+    border: 1.5px solid yellow;
+    position: inherit;
 }
 #stats{
     margin: 0px;
@@ -51,16 +72,60 @@ p{
     position:sticky;
     font-family: 'Times New Roman', Times, serif;
 }
-.jumpscare{
-    height: 80%;
-    margin: auto;
+/*level stuff*/
+#levelSelectMenu{
+    height: var(--heightOflevelSelectMenu);
+}
+.levelSelectButton {
+    display: none;
+}
+.visibleStageSelect{
+    display: block;
+    color: gold;
+    background-color: salmon;
+    font-family: 'Times New Roman', Times, serif;
+    height: 2em;
+    border: 3px solid black;
+    width: 4em;
 }
 /*shop stuff*/
+#shop{
+    height: var(--heightOfShopMenu);
+}
 .shopMenuContainer, .shopMenuContent{
     display: none;
 }
-.shopMenuContainer:hover, .shopMenuContent:hover{
-    display: block;
-    position: absolute;
-    
+#optionsContainer{
+    overflow: hidden;
+    text-align: right;
+    border: 3px aquamarine solid;
+}
+.visibleShopMenu{
+    text-align: center;
+    font-size: 1.9em;
+    display: inline-block;
+    background-color: skyblue;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 0px;
+}
+button.visibleShopMenu{
+    font-size: 1em;
+    border: 5px cyan dashed;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+}
+h1.visibleShopMenu{
+    text-align: center;
+    background: none;
+    color: #00f2ff;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.visibleShopContainer{
+    text-align: center;
+    display: inline-block;
+    background-color: rgb(0, 138, 189);
+    font-family: 'Times New Roman', Times, serif;
+    border: 3px solid black;
+    background-image: linear-gradient(90deg, #1d199f 20%, #3a8fc4 40%, #4a7f99 60%, #00FFF0 80%, #00eeff 100%);
 }
