@@ -10,15 +10,87 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="docs/assets/tschika 16by16 icon.png" type="image/x-icon">
 </head>
-<body>
+<body onload="changeCursors(), changeLevelStage()">
 <main>
-<div id="container">
+<div id="container" draggable="false">
 </div>
 <div id="cursorTrailer"></div>
-<section id="stats">
 <p id="caughtTschikaCounter"><em>Caught tschikas: </em><strong>0</strong></p>
-</section>
+<br>
 <section id="levelSelectMenu">
-<p id="levelCount"></p>
+<button onclick="activateStageSelect()" class="uiButtons">Stage Select</button>
+<button class="levelSelectButton">1st</button>
+<button class="levelSelectButton">2nd</button>
+</section> 
+<br>
+<section id="shop">
+<button onclick="activateShopMenu()" class="uiButtons">Shooop</button>
+<br>
+<div class="shopMenuContainer" style="width: 33%; margin-left: 12.5%;">
+<div class="shopMenuContainer" id="optionsContainer" style="width: 75%;">
+<br>
+<h1 class="shopMenuContent">THE SHOOOP (everything is free tho)</h1>
+<br>
+<h1 class="shopMenuContent" style="color: azure; padding: 0; margin: 0; font-size: 1.5em; text-align: left;">"items on special! discount of - -100%"</h1>
+<br>
+<button class="shopMenuContent"><h6 class="visibleShopMenu">tschika coke bottle</h6><br>
+<label class="switch">
+<input type="checkbox" class="cursorAbilitySwitch">
+<span class="slider round"></span>
+</label>
+<button class="informationButton" onclick="alert('this is the default gamemode. Try to catch the tschikas. \n\n Goodbye for now, make sure to take care and shower every Tuesday before drinking pepsi!');">(i)</button>
+</button>
+<br>
+<button class="shopMenuContent"><h6 class="visibleShopMenu">fishing rod</h6><br>
+<label class="switch">
+<input type="checkbox" class="cursorAbilitySwitch">
+<span class="slider round" id="fishTschikaSwitch"></span>
+</label>
+<button class="informationButton" onclick="alert('this is the new FISH!ing gamemode. For it to work the best, wait until there are alot of FISH!, like until they form a circle, then click one. \n\n Goodbye for now, make sure to take care and not put your elbows on the ceiling fan twice while eating the road');">(i)</button>
+</button>
+<br>
+<button class="shopMenuContent"><h6 class="visibleShopMenu">bug catching net</h6><br>
+<!-- <label class="switch">
+<input type="checkbox" class="cursorAbilitySwitch">
+<span class="slider round"></span>
+</label> -->
+<button class="informationButton" onclick="let shitAnswer = prompt('this gamemode isn\'t complete yet. Instead, unscramble this word correctly. (hint: the answer is a great discription of you) \n\n THIS'); if (shitAnswer.toLowerCase() == 'shit'){alert('yes, that is correct')} else{alert('that isn\' the word')}">(i)</button>
+</button>
+<br>
+<button class="shopMenuContent"><h6 class="visibleShopMenu">frying pan<br>
+<!-- <label class="switch">
+<input type="checkbox" class="cursorAbilitySwitch">
+<span class="slider round"></span>
+</label> -->
+<button class="informationButton" onclick="alert('This one is for you to figure out yourself');">(i)</button>
+</button>
+<br>
+<button class="shopMenuContent"><h6 class="visibleShopMenu" style="font-size: 2vh; font-weight: 1000;">INTERNAL COMBUSTION ENGINE<br>
+<!-- <label class="switch">
+<input type="checkbox" class="cursorAbilitySwitch">
+<span class="slider round"></span>
+</label> -->
+<button class="informationButton" onclick="alert('This one isn\'t for you to figure out yourself. But you can still try though.');">(i)</button>
+</button>
+<br>
+<br>
+<h1 class="shopMenuContent" style="color: azure; padding: 0; margin: 0; font-size: 10px; text-align: right; font-family: 'Varela Round', sans-serif;">"negative negative 100% off, which means you pay double. you will need a recipt to return your items, and we're not giving you a recipt because that stuff costs money. no returns. the customer is always wrong. this is the only shop here, so we will take your ceiling fan away from you. We're the only ones here, so you are forced to buy stuff from us. It's free for a price, and the price is $0, so it's free. FOR A PRICE (which is $0, which means it's free, but for a price, which is $0, which means it's free...)</h1>
+</div>
+</div>
+</section>
+</main>
+<div style="background-image: none;
+    cursor: default;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-top: 3%;
+    text-align: right;
+    z-index: -2;
+    flex-shrink: 0;" onclick="open('www.youtube.com/watch?v=dQw4w9WgXcQ')"><a style="all: inherit;" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">a secret button that something funny will happen when you click it</a></div>
 </body>
 </html>
