@@ -1,8 +1,12 @@
+/*fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 html{
     --cursor: url(docs/assets/tschika-cola.png);
     --cursortrailer: '';
+    --backgroundImage: url(docs/assets/windows\ xp\ wallpaper.jpg);
 }
+/*elements*/
 body{
     touch-action: none;
     cursor: pointer;
@@ -39,46 +43,74 @@ main{
     margin: 0px;
     margin-right: 1px;
     background-size:100% 100%;
-    background-image: url(docs/assets/windows\ xp\ wallpaper.jpg);
-    overflow: auto;
+    background-image: var(--backgroundImage);
+    overflow: scroll;
     cursor: var(--cursor), crosshair;
 }
 .tschika{
-    transition: transform 0.6s;
+    transition: all 0.6s;
     height: 7em;
     padding: 10px;
     border-radius: 50px;
-    border: 1.5px solid yellow;
+    border: 3px solid rgb(223, 255, 79);
     position: inherit;
 }
-#stats{
-    margin: 0px;
-    width: 20%;
-    font-size: 1em;
-    height: 10%;
-    text-align: center;
+.tschikafish {
+    top: 50%;
+    left: 50%;
+    opacity: 0.7;
+    filter: hue-rotate();
+    z-index: 100;
+    position: absolute;
+    background-size: 100%;
+    background-repeat: none;
+    background-image: url(docs/assets/tschikafish.png);
+    height: 3em;
+    width: 3em;
+    animation: fishSpin 3s linear 0s infinite;
+    transition: all 5s;
 }
-p{
+#caughtTschikaCounter{
     font-size: 2em;
     border: 2px solid black;
     border-radius: 3px;
     background-color: #FFFFFF;
     color: black;
     background-size: 100% 100%;
-    background-image: linear-gradient(235deg,#FF0000 11.1%, #FF6000 22.2%, #EEE000 33.3%, #00FF00 44.4%, #007700 55.5%, #00FFF0 66.6%, #003e9b 77.7%, #6150fa 88.8%, #FF00FF 100%);
+    background: linear-gradient(235deg,#FF0000 11.1%, #FF6000 22.2%, #EEE000 33.3%, #00FF00 44.4%, #007700 55.5%, #00FFF0 66.6%, #003e9b 77.7%, #6150fa 88.8%, #FF00FF 100%);
     -webkit-align-self: center;
     margin: 1% 1%;
     align-self: center;
     position:sticky;
     font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    width: 20%;
+    height: 10%;
+    text-align: center;
+}
+.uiButtons{
+    font-size: 3vh;
+    border: 3px solid #000;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #FFF;
+    background-size: 100% 100%;
+    background: linear-gradient(235deg,#FF0000 11.1%, #FF6000 22.2%, #EEE000 33.3%, #00FF00 44.4%, #007700 55.5%, #00FFF0 66.6%, #003e9b 77.7%, #6150fa 88.8%, #FF00FF 100%);
+    -webkit-align-self: center;
+    align-self: center;
+    position:sticky;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    width: 20%;
+    height: 5vh;
+    text-align: center;
+    background-size: 800%;
+    animation: movingBackground 45s linear infinite;
 }
 /*level stuff*/
-#levelSelectMenu{
-    height: var(--heightOflevelSelectMenu);
-}
 .levelSelectButton {
     display: none;
-}
+}   
 .visibleStageSelect{
     display: block;
     color: gold;
@@ -89,19 +121,29 @@ p{
     width: 4em;
 }
 /*shop stuff*/
-#shop{
-    height: var(--heightOfShopMenu);
+h6.visibleShopMenu{
+    font-family: inherit;
+    font-size: 3.5vh;
+    margin: 0px;
+}
+.cursorAbilitySwitch{
+    width: 12.5%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    border-radius: 50%;
+
 }
 .shopMenuContainer, .shopMenuContent{
     display: none;
 }
 #optionsContainer{
-    overflow: hidden;
-    text-align: right;
+    overflow:visible;
     border: 3px aquamarine solid;
 }
 .visibleShopMenu{
-    text-align: center;
+    text-align: right;
     font-size: 1.9em;
     display: inline-block;
     background-color: skyblue;
@@ -109,23 +151,116 @@ p{
     margin-top: 0px;
 }
 button.visibleShopMenu{
-    font-size: 1em;
+    width: 75%;
+    height: 12vh;
+    text-align: left;
+    font-size: 3vh;
+    padding-right: 5%;
+    margin: 1% 5% 1% 1%;
+    font-size: 10px;
     border: 5px cyan dashed;
     border-radius: 10px;
     font-family: 'Pacifico', cursive;
 }
 h1.visibleShopMenu{
-    text-align: center;
+    text-align:left;
     background: none;
-    color: #00f2ff;
+    color: rgb(226, 125, 125);
     background-clip: text;
     -webkit-background-clip: text;
 }
 .visibleShopContainer{
-    text-align: center;
+    text-align: right;
     display: inline-block;
     background-color: rgb(0, 138, 189);
     font-family: 'Times New Roman', Times, serif;
     border: 3px solid black;
-    background-image: linear-gradient(90deg, #1d199f 20%, #3a8fc4 40%, #4a7f99 60%, #00FFF0 80%, #00eeff 100%);
+    background-image: linear-gradient(90deg, #1d199f 20%, #3a8fc4 40%, #196864 60%, #00FFF0 80%, #00eeff 100%);
+}
+.informationButton{
+    width: 4vh;
+    height: 4vh;
+    margin: 0px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(0, 112, 197);
+}
+/*slider stuff*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 8vh;
+    height: 4vh;
+    margin-left: 80%;
+}
+input.switch {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    text-align: right !important;
+    position: absolute;
+    cursor: pointer;
+    margin-right: 1vh;
+    inset: 0px;
+    background-color: #ff964b;
+    -webkit-transition: .4s;
+    transition: 1.25s;
+}
+
+.slider:before {
+    position: absolute;
+    text-align: right !important;
+    font-size: 1em;
+    font-weight: 1000;
+    content: "TSCHIKA!tschika"; /*default*/
+    height: 4vh;
+    width: 4vh;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgb(255, 238, 0);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+#fishTschikaSwitch:nth-child(2)::before{
+    content: "FISH!tschika" !important;
+}
+input:checked + .slider {
+    background-color: rgb(156, 0, 31);
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(3vh);
+    -ms-transform: translateX(3vh);
+    transform: translateX(3vh);
+}
+.slider.round {
+    border-radius: 2vh;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+/*keyframe*/
+@keyframes fishSpin {
+    0% {
+      transform: rotate(-1deg) translateX(7em);
+    }
+    100% {
+      transform: rotate(-359deg) translateX(7em); 
+    }
+}
+@keyframes movingBackground{
+    0% {
+        background-position: 0% 100%;
+    }
+    33.3% {
+        background-position: 200% 100%;
+    }
+    66.6% {
+        background-position: 400% 200%;
+    }
+    100% {
+        background-position: 800% 400%;
+    }
 }
